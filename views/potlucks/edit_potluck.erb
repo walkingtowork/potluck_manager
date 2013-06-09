@@ -1,0 +1,18 @@
+<h3>Edit a potluck</h3>
+<form method="post" action="/edit_potluck/<%= @potluck.id %>">
+Name:
+<input type="text" name="potluck[name]" value="<%= @potluck.name %>">
+<br>
+Location:
+<input type="text" name="potluck[location]" value="<%= @potluck.location %>">
+<br>
+Date:
+<input type="date" name="potluck[date]" value="<%= @potluck.date %>">
+<br>
+<button>Save Changes</button>
+</form>
+
+<!-- DELETE -->
+<form method="post" action="/delete_potluck/<%= @potluck.id %>">
+  <button>Cancel Potluck</button>
+</form>

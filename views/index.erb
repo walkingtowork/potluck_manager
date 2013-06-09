@@ -1,0 +1,46 @@
+
+<h1>Potlucks</h1>
+<ul>
+  <% @potlucks.each do |potluck| %>
+    <li>
+      <%= potluck.name %>
+      <br>
+      <a href="/edit_potluck/<%= potluck.id %>">Edit Potluck</a>
+      <a href="view_potluck/<%= potluck.id %>">View Potluck</a>
+    </li>
+  <% end %>
+</ul>
+
+
+
+<!-- Main Page:
+List of parties - view
+
+View Potluck Page:
+Add Item
+Table:
+Item Tags Claimed By
+
+Claim Item Page:
+Name of Potluck
+Name of Item
+Tags
+Your Name (find_or_create_by_name)
+Claim this item (submit button)
+
+Add Item Page
+Potluck Name
+Add new item: ____
+Tags (checkbox)
+Submit Button
+
+Tag Admin Page
+List of Existing Tags, Delete option
+Add new tag
+
+
+
+Classes: Person, Potluck, Item, Tag
+
+Bonus #1: Bootstrap
+Bonus #2: Choose Potluck image from Image Gem, Select one as Party Image -->

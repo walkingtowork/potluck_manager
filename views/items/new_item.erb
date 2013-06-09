@@ -1,0 +1,12 @@
+<%= @potluck.name %>
+
+<form method="post" action"/new_item/<%= @potluck.id %>">
+  What are you bringing?
+  <br>
+  <input type="text" name="item[name]">
+  Tags:
+  <input type="checkbox" name="tag[name]">
+
+
+  <button>Save Item</button>
+</form>
