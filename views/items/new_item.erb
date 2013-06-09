@@ -4,9 +4,28 @@
   What are you bringing?
   <br>
   <input type="text" name="item[name]">
+  <br>
   Tags:
-  <input type="checkbox" name="tag[name]">
-
+  <br>
+  <% Tag.all.each do |tag| %>
+    <input type="checkbox" name="item[tag_ids[]]" value="<%= tag.id %>">
+    <%= tag.name %>
+    <br>
+  <% end %>
 
   <button>Save Item</button>
 </form>
+
+
+<!-- DELETE ITEMS -->
+<h3>Existing Items</h3>
+  <% Item.all.each do |item| %>
+    <ul>
+      <li>
+        <%= item.name %>
+        <form method="post" action="/delete_item/<%= item.id %>">
+          <button>Delete</button>
+        </form>
+      </li>
+    </ul>
+  <% end %>

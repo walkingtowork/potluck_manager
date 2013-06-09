@@ -1,0 +1,19 @@
+<h2>Edit Tags</h2>
+
+<h3>Existing Tags</h3>
+  <% Tag.all.each do |tag| %>
+    <ul>
+      <li>
+        <%= tag.name %>
+        <form method="post" action="/delete_tag/<%= tag.id %>">
+          <button>Delete</button>
+        </form>
+      </li>
+    </ul>
+  <% end %>
+
+<h3>New Tag</h3>
+<form method="post" action="/tag_admin">
+  <input type="text" name="tag[name]">
+  <button>Save Tag</button>
+</form>

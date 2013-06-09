@@ -2,4 +2,15 @@
 
 <a href="/new_item/<%= @potluck.id %>">Add Item</a>
 <br>
-Item/Tags/Claimant
+Current Items:
+<br>
+<% Item.all.each do |item| %>
+  <%= item.name %>
+  | Tags |
+  <%= item.person ? item.person.name : "<a href=\"/claim_item/#{item.id}\">Claim</a>" %>
+  <br>
+
+    <br>
+<% end %>
+
+

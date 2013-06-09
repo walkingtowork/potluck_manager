@@ -1,0 +1,10 @@
+Confirmation Page
+<br>
+You are agreeing to bring <%= @item.name %>
+
+<form method="post" action="/claim_item/<%= @item.id %>">
+  What is your name?
+  <input type="text" name="person[name]">
+  <br>
+  <button>Save</button>
+</form>

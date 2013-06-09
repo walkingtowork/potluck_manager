@@ -1,13 +1,18 @@
-get "/tags/tag_admin" do
-  erb :tag_admin
+get "/tag_admin" do
+  erb :"tags/tag_admin"
 end
 
-post "/tags/tag_admin" do
+post "/tag_admin" do
   @tag = Tag.new(params[:tag])
 
-  if @tag.save
-    redirect "/"
-  else
-    erb :"tags/tag_admin"
+  @tag.save
+
+  erb :"tags/tag_admin"
   end
+
+post "/delete_tag/:tag_id" do
+  @tag = Tag.find(params[:tag_id])
+  @tag.delete
+
+  erb :"tags/tag_admin"
 end

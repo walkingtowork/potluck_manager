@@ -14,6 +14,7 @@ end
 
 get "/view_potluck/:potluck_id" do
   @potluck = Potluck.find(params[:potluck_id])
+
   erb :"potlucks/view_potluck"
 end
 
